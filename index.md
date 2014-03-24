@@ -1,111 +1,40 @@
----
-title:  Editing questionnaire for 2015 survey 
-author: RAS & AI
-lang: english
+% Collaborative writing using etherpad & github
+% Markus Kainu
+% March 24, 2014
 ...
-
-Here you can edit the questionnaire of 2015 survey.
 
 How to
 ==========================
 
-1. Make your edits in the source: [pad.okfn.org/p/AiSurvey](http://pad.okfn.org/p/AiSurvey) (**See writing instructions from below**)
+1. Make your edits in the source: [pad.okfn.org/p/pad-github-collaboration](http://pad.okfn.org/p/pad-github-collaboration)
 2. Outputs are generated on request. 
 	- Email <a href="mailto:markus.kainu@helsinki.fi?Subject=compile ai-survey" target="_top"> Markus</a> if you want the source to be converted
 3. Browse the outputs:
-    - [html](form.html)
-	- [odt](form.odt)
-	- [docx](form.docx)
+    - [html](paper.html)
+    - [pdf](paper.pdf)
+	- [odt](paper.odt)
+	- [docx](paper.docx)
 
-Writing instructions
+Content of the .sh file
 ==========================
 
-For proper formatting you have to use [markdown-syntax](https://help.github.com/articles/markdown-basics). Below you can find the very basics.
 
-The code below:
+```bash
 
-```r
+#!/bin/bash
 
-This is first level heading
-===========================
+# Create and move to backup directory
+cd ~/workspace/openscience/pad-github-collaboration
+curl -o input.md http://pad.okfn.org/p/pad-github-collaboration/export/txt
 
-# This is ALSO first level heading
+pandoc -s -S --toc --number-section -H /home/aurelius/workspace/web/css/rmarkdown.css input.md -o paper.html
+pandoc --toc input.md -o paper.docx
+pandoc --toc input.md -o paper.odt
+pandoc --toc --number-section --latex-engine=xelatex -V lang=english -V papersize:a4paper -V documentclass=scrartcl input.md -o paper.pdf
+pandoc -s -S -H /home/aurelius/workspace/web/css/rmarkdown.css index.md -o index.html
 
-This is second level heading
----------------------------
+git commit -am "paper updated"
+git push
 
-## This is ALSO second level heading
-
-
-### This is third level heading
-
-
-- this
-- is
-- list
-
-
-1. this
-2. is
-3. numbered
-4. list
-
-
-| This | is | table | heading |
-| ---- | -- | ----- | ------- |
-| This | is | table | row |
-| This | is | table | row |
-| This | is | table | row |
-
-This is **bold** and this is *italic*.
-
-`this is code or comment`
-
->this is quote
-
-[This is link to Yle](http://yle.fi)
 
 ```
-
-looks like this
-
-*********
-
-This is first level heading
-===========================
-
-# This is ALSO first level heading
-
-This is second level heading
----------------------------
-
-## This is ALSO second level heading
-
-
-### This is third level heading
-
-
-- this
-- is
-- list
-
-
-1. this
-2. is
-3. numbered
-4. list
-
-
-| This | is | table | heading |
-| ---- | -- | ----- | ------- |
-| This | is | table | row |
-| This | is | table | row |
-| This | is | table | row |
-
-This is **bold** and this is *italic*.
-
-`this is code or comment`
-
->this is quote
-
-[This is link to Yle](http://yle.fi)
