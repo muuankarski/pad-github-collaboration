@@ -1,0 +1,512 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="english" xml:lang="english">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css" />
+  <meta name="generator" content="pandoc" />
+  <meta name="author" content="RAS &amp; AI" />
+  <title>Editing questionnaire for 2015 survey</title>
+  <style type="text/css">code{white-space: pre;}</style>
+  <style type="text/css">
+table.sourceCode, tr.sourceCode, td.lineNumbers, td.sourceCode {
+  margin: 0; padding: 0; vertical-align: baseline; border: none; }
+table.sourceCode { width: 100%; line-height: 100%; }
+td.lineNumbers { text-align: right; padding-right: 4px; padding-left: 4px; color: #aaaaaa; border-right: 1px solid #aaaaaa; }
+td.sourceCode { padding-left: 5px; }
+code > span.kw { color: #007020; font-weight: bold; }
+code > span.dt { color: #902000; }
+code > span.dv { color: #40a070; }
+code > span.bn { color: #40a070; }
+code > span.fl { color: #40a070; }
+code > span.ch { color: #4070a0; }
+code > span.st { color: #4070a0; }
+code > span.co { color: #60a0b0; font-style: italic; }
+code > span.ot { color: #007020; }
+code > span.al { color: #ff0000; font-weight: bold; }
+code > span.fu { color: #06287e; }
+code > span.er { color: #ff0000; font-weight: bold; }
+  </style>
+  <style>
+  
+  @font-face {
+    font-family: 'Lato';
+    font-style: normal;
+    font-weight: 400;
+    src: local('Lato Regular'), local('Lato-Regular'), url(fonts/Lato.woff) format('woff');
+  }
+  @font-face {
+    font-family: 'Lato';
+    font-style: normal;
+    font-weight: 700;
+    src: local('Lato Bold'), local('Lato-Bold'), url(fonts/LatoBold.woff) format('woff');
+  }
+  @font-face {
+    font-family: 'Lato';
+    font-style: normal;
+    font-weight: 900;
+    src: local('Lato Black'), local('Lato-Black'), url(fonts/LatoBlack.woff) format('woff');
+  }
+  @font-face {
+    font-family: 'Lato';
+    font-style: italic;
+    font-weight: 400;
+    src: local('Lato Italic'), local('Lato-Italic'), url(fonts/LatoItalic.woff) format('woff');
+  }
+  
+  
+  -something { /* Just to escape the effect of html tag above in pandoc*/
+  
+  }
+  
+  .title /* Pandoc title header (h1.title) */
+      {
+      text-align: center;
+  	border-width:0px;
+  	font-size: 1.5em;
+  	margin: 0 0 5px 0;
+  	word-spacing: .1em;
+  	border-bottom: 0px;
+  	text-transform:none;
+      }
+  
+  .author /* Pandoc author(s) header (h2.author) */
+      {
+      text-align: center;
+      font-size: 1.1em;
+      line-height: 1.2em;
+      border-bottom: 0px;
+      }
+  
+  .date /* Pandoc date header (h3.date) */
+      {
+  	font-family:  Lato, Arial;
+  	text-align: center;
+  	font-size: 1.1em;
+  	line-height: 1.2em;
+      }
+  
+  
+  body {
+      margin-left: 240px;
+      max-width:750px; 
+      border: 0px;
+      font-family: Lato, Helvetica, sans-serif;
+  }
+  
+  
+  #toc {
+      font-size:0.9em;
+      height: 100%;
+      position: fixed;
+      width: 220px;
+      left: 5px;
+      padding-top: 20px;
+      color: #003333;
+      border-right: 1px dashed #C1C1C1;
+  }
+  
+  #toc_header {
+      font-size: 1em;
+      font-weight: bold;    
+      border-bottom: 1px dashed #C1C1C1;
+      color: black;
+  }
+  
+  
+  
+  #TOC li {
+      padding: 2px 4px;
+      margin-left: 2px;
+  }
+  
+  
+  #TOC a {
+      color: #003333;
+      display: block;
+  }
+  
+  
+  #TOC {
+      font-size:0.9em;
+      height: 100%;
+      position: fixed; 
+      width: 220px;
+      left: 5px;
+      padding-top: 20px;
+      color: #003333;
+      border-right: 1px dashed #C1C1C1;
+  }
+  
+  #TOC_HEADER {
+      font-size: 1em;
+      font-weight: bold;    
+      border-bottom: 1px dashed #C1C1C1;
+      color: black;
+  }
+  
+  
+  
+  #TOC li {
+      padding: 2px 4px;
+      margin-left: 2px;
+  }
+  
+  
+  #TOC a {
+      color: #003333;
+      display: block;
+  }
+  
+  
+  blockquote {
+  	padding-left: .5em; 
+      border-left: 2px solid #C1C1C1;
+  	font-style: italic;
+  }
+  
+  
+  pre {	
+     margin-top: 0;
+     max-width: 95%;
+     border: 1px dashed #ccc;
+     white-space: pre-wrap;
+     font-size:1.0em;
+      background: #FFFFFF;
+  }
+  
+  pre code {
+     display: block; 
+     padding: 0.2em;
+     font-size:1.0em;
+  }
+  
+  code.r, code.cpp {
+     background-color: #ECEEF0;
+  }
+  
+  
+  
+  ul {
+  	font-size: 100% !important;
+  	font-family: Lato, Helvetica, sans-serif;
+  }
+  li {
+  	font-family: Lato, Helvetica, sans-serif;
+   	font-size: 1em;
+   	line-height: 1.1em;
+  }
+  
+  
+  p {
+  	font-family: Lato, Helvetica, sans-serif;
+  	padding-top: 2px;
+  	padding-bottom: 2px;
+  	font-size: 1em;
+  	line-height: 1.2em;
+  }
+  ol {
+  	list-style: decimal outside;
+  	list-style-type: decimal;
+  	float: none;
+  	margin: .5em 0 .5em 30px;
+  	padding: 0;
+  }
+  ul {
+  	margin: .2em 0 .2em 10px;
+  	padding: 0;
+  }
+  UL li, ol li {
+  	line-height: 1.1em;
+  	padding: 2px;
+  }
+  a:link {
+  	color: #657b83;
+     /* text-decoration: none; */
+  }
+  a:hover {
+  	color: #657b83;
+  }
+  a:visited {
+  	color: #657b83;
+  }
+  a:focus {
+  	color: #657b83;
+  }
+  a:active {
+  	color: #657b83;
+  }
+  
+  h1 {
+  	font-family:  Lato, Arial;
+  	font-size: 1.3em;
+  	padding: 2px;
+  	line-height: 1.3em;
+      font-weight: 400;
+  	/*letter-spacing: 0.06em;
+  	word-spacing: .1em;*/
+      border-bottom: 0.5px solid #657b83;
+  	text-transform:uppercase;
+      color: #657b83;
+  }
+  h2 {
+  	font-family:  Lato, Arial;
+  	font-size: 1.1em;
+  	padding: 2px;
+  	line-height: 1.1em;
+      font-weight: 300;
+  	letter-spacing: 0.05em;
+  	word-spacing: .1em;
+  	border-bottom: 0.5px dashed #657b83;
+  /*	text-transform:capitalize;*/
+      color: #657b83;
+  
+  }
+  h3 {
+  	font-family:  Lato, Arial;
+  	font-size: 1.1em;
+  	padding: 2px;
+  	line-height: 1.1em;
+      font-weight: 300;
+  	letter-spacing: 0.05em;
+  	word-spacing: .1em;
+      color: #657b83;
+  
+  }
+  h4 {
+  	font-family: Lato;
+  	font-size: 1.0em;
+  	padding: 2px;
+  	line-height: 1.0em;
+  	color: #555;
+  	font-weight: italic;
+      color: #657b83;
+  }
+  h5 {
+  	font-family: Avant Garde;
+  	font-size: 1.05em;
+  	padding: 2px;
+  	line-height: 1.15em;
+  	color: #555;
+  	font-weight: normal;
+      color: #657b83;
+  }
+  h6 {
+  	font-family: Lato;
+  	font-size: 1em;
+  	padding: 2px;
+  	line-height: 1.1em;
+  	color: #555;
+  	font-weight: normal;
+      color: #657b83;
+  }
+  p.caption, table caption, caption{
+      margin-top:0em;
+      padding:2px;
+      font-weight: 600;
+      font-size:1.0em;
+      text-align:left;
+      color: #657b83;
+  }
+  
+  /* table styles */
+  table {
+  	border-collapse: collapse;
+  	border-spacing: 0;
+      line-height: 1.4em;
+  	font-size: 0.9em;
+  	/*font-family: monospace;*/
+  
+  }
+  .views-table, table {
+  	margin-left: 2px;
+  	margin-bottom: 10px;
+  	/*width: 1300px;*/
+  }
+  tr {
+  	line-height: 1.2em;
+  	border-bottom: #9e9e9e thin solid;
+  }
+  tr:last-child {
+  	line-height: 1.2em;
+  }
+  th {
+  	margin: 5px 0 5px 0;
+  	padding: 0 5px 0 5px;
+  /*	border-right: #9e9e9e thin solid; */
+  	text-align: left;
+  	border-bottom: #9e9e9e thin solid;
+  }
+  th:last-child {
+  	margin: 5px 0 5px 0;
+  	padding: 0 5px 0 5px;
+  /*	border-right: #9e9e9e thin solid; */
+  	text-align: left;
+  }
+  th:first-child {
+  	margin: 5px 0 5px 0;
+  	padding: 0 5px 0 5px;
+  /*	border: #9e9e9e thin solid; */
+  }
+  tbody tr {
+  	line-height: 1.2em;
+  /*	border-left: #9e9e9e thin solid; */
+  }
+  tbody tr:nth-child(odd) {
+  	line-height: 1.2em;
+  	background-color: #F3F5F5;
+  }
+  td {
+  	padding: 0 5px 0 5px;
+  /*	border-right: #9e9e9e thin solid; */
+  }
+  td:last-child {
+  	padding: 0 5px 0 5px;
+  }
+  DL {
+  	margin: .3em 0 .3em 0;
+  }
+  DT {
+  	margin: .3em 0 .3em 0;
+  }
+  DD {
+  	line-height: 1.5em;
+  	list-style: none;
+  	margin: .7em 0 .7em 2em;
+  }
+  td.active {
+  	background-color: transparent!important;
+  }
+  tr:last-child {
+  	border-bottom: #9e9e9e thin solid;
+  }
+  tr:first-child {
+  	border-top: #9e9e9e thin solid;
+  }
+  th:last-child {
+  /*	border-left: #9e9e9e thin solid; */
+  }
+  th:last-child {
+  	/*border-right: #9e9e9e thin solid;*/
+  }
+  </style>
+  
+  <link href='http://fonts.googleapis.com/css?family=Lato' rel='stylesheet' type='text/css'>
+</head>
+<body>
+<div id="header">
+<h1 class="title">Editing questionnaire for 2015 survey</h1>
+<h2 class="author">RAS &amp; AI</h2>
+</div>
+<p>Here you can edit the questionnaire of 2015 survey.</p>
+<h1 id="how-to">How to</h1>
+<ol style="list-style-type: decimal">
+<li>Make your edits in the source: <a href="http://pad.okfn.org/p/AiSurvey">pad.okfn.org/p/AiSurvey</a> (<strong>See writing instructions from below</strong>)</li>
+<li>Outputs are generated on request.
+<ul>
+<li>Email <a href="mailto:markus.kainu@helsinki.fi?Subject=compile ai-survey" target="_top"> Markus</a> if you want the source to be converted</li>
+</ul></li>
+<li>Browse the outputs:
+<ul>
+<li><a href="form.html">html</a></li>
+<li><a href="form.odt">odt</a></li>
+<li><a href="form.docx">docx</a></li>
+</ul></li>
+</ol>
+<h1 id="writing-instructions">Writing instructions</h1>
+<p>For proper formatting you have to use <a href="https://help.github.com/articles/markdown-basics">markdown-syntax</a>. Below you can find the very basics.</p>
+<p>The code below:</p>
+<pre class="sourceCode r"><code class="sourceCode r">
+This is first level heading
+==<span class="er">=========================</span>
+
+<span class="co"># This is ALSO first level heading</span>
+
+This is second level heading
+---------------------------
+
+## This is ALSO second level heading
+
+
+### This is third level heading
+
+
+-<span class="st"> </span>this
+-<span class="st"> </span>is
+-<span class="st"> </span>list
+
+
+<span class="dv">1</span>. this
+<span class="dv">2</span>. is
+<span class="dv">3</span>. numbered
+<span class="dv">4</span>. list
+
+
+|<span class="st"> </span>This |<span class="st"> </span>is |<span class="st"> </span>table |<span class="st"> </span>heading |
+<span class="er">|</span><span class="st"> </span>----<span class="st"> </span><span class="er">|</span><span class="st"> </span>--<span class="st"> </span><span class="er">|</span><span class="st"> </span>-----<span class="st"> </span><span class="er">|</span><span class="st"> </span>-------<span class="st"> </span><span class="er">|</span>
+<span class="er">|</span><span class="st"> </span>This |<span class="st"> </span>is |<span class="st"> </span>table |<span class="st"> </span>row |
+<span class="er">|</span><span class="st"> </span>This |<span class="st"> </span>is |<span class="st"> </span>table |<span class="st"> </span>row |
+<span class="er">|</span><span class="st"> </span>This |<span class="st"> </span>is |<span class="st"> </span>table |<span class="st"> </span>row |
+
+This is **bold**<span class="st"> </span>and this is *italic*.
+
+<span class="st">`</span><span class="dt">this is code or comment</span><span class="st">`</span>
+
+&gt;this is quote
+
+[This is link to Yle](http:<span class="er">//</span>yle.fi)</code></pre>
+<p>looks like this</p>
+<hr />
+<h1 id="this-is-first-level-heading">This is first level heading</h1>
+<h1 id="this-is-also-first-level-heading">This is ALSO first level heading</h1>
+<h2 id="this-is-second-level-heading">This is second level heading</h2>
+<h2 id="this-is-also-second-level-heading">This is ALSO second level heading</h2>
+<h3 id="this-is-third-level-heading">This is third level heading</h3>
+<ul>
+<li>this</li>
+<li>is</li>
+<li>list</li>
+</ul>
+<ol style="list-style-type: decimal">
+<li>this</li>
+<li>is</li>
+<li>numbered</li>
+<li>list</li>
+</ol>
+<table>
+<thead>
+<tr class="header">
+<th align="left">This</th>
+<th align="left">is</th>
+<th align="left">table</th>
+<th align="left">heading</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">This</td>
+<td align="left">is</td>
+<td align="left">table</td>
+<td align="left">row</td>
+</tr>
+<tr class="even">
+<td align="left">This</td>
+<td align="left">is</td>
+<td align="left">table</td>
+<td align="left">row</td>
+</tr>
+<tr class="odd">
+<td align="left">This</td>
+<td align="left">is</td>
+<td align="left">table</td>
+<td align="left">row</td>
+</tr>
+</tbody>
+</table>
+<p>This is <strong>bold</strong> and this is <em>italic</em>.</p>
+<p><code>this is code or comment</code></p>
+<blockquote>
+<p>this is quote</p>
+</blockquote>
+<p><a href="http://yle.fi">This is link to Yle</a></p>
+</body>
+</html>
