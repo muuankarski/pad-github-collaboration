@@ -399,14 +399,10 @@ code > span.er { color: #ff0000; font-weight: bold; }
 <h2 class="author">Markus Kainu</h2>
 <h3 class="date">March 24, 2014</h3>
 </div>
-<p>…</p>
 <h1 id="how-to">How to</h1>
 <ol style="list-style-type: decimal">
 <li>Make your edits in the source: <a href="http://pad.okfn.org/p/pad-github-collaboration">pad.okfn.org/p/pad-github-collaboration</a></li>
-<li>Outputs are generated on request.
-<ul>
-<li>Email <a href="mailto:markus.kainu@helsinki.fi?Subject=compile ai-survey" target="_top"> Markus</a> if you want the source to be converted</li>
-</ul></li>
+<li>Outputs are generated and pushed to github by executing <code>./compile.sh</code> in your working directory</li>
 <li>Browse the outputs:
 <ul>
 <li><a href="paper.html">html</a></li>
@@ -415,9 +411,8 @@ code > span.er { color: #ff0000; font-weight: bold; }
 <li><a href="paper.docx">docx</a></li>
 </ul></li>
 </ol>
-<h1 id="content-of-the-.sh-file">Content of the .sh file</h1>
-<pre class="sourceCode bash"><code class="sourceCode bash">
-<span class="co">#!/bin/bash</span>
+<h2 id="content-of-the-compile.sh-file">Content of the compile.sh file</h2>
+<pre class="sourceCode bash"><code class="sourceCode bash"><span class="co">#!/bin/bash</span>
 
 <span class="co"># Create and move to backup directory</span>
 <span class="kw">cd</span> ~/workspace/openscience/pad-github-collaboration
@@ -430,7 +425,6 @@ code > span.er { color: #ff0000; font-weight: bold; }
 <span class="kw">pandoc</span> -s -S -H /home/aurelius/workspace/web/css/rmarkdown.css index.md -o index.html
 
 <span class="kw">git</span> commit -am <span class="st">&quot;paper updated&quot;</span>
-<span class="kw">git</span> push
-</code></pre>
+<span class="kw">git</span> push</code></pre>
 </body>
 </html>
